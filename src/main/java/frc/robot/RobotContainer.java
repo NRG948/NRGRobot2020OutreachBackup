@@ -25,6 +25,8 @@ public class RobotContainer {
   private final Turret turret = new Turret();
   private final ShooterRPM rpm = new ShooterRPM();
 
+  private Subsystems subsystems = new Subsystems();
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
@@ -46,6 +48,8 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     operatorController.leftTrigger().whileTrue(new SetDriveSpeed(drivetrain));
+    operatorController.rightBumper().whileTrue(new RainbowLEDCycle(Subsystems.leds));
+    operatorController.leftBumper().onTrue(new FlashingLEDs(Constants.ColorConstants.RED, Constants.ColorConstants.YELLOW, subsystems.leds, 1));
     
     //m_robotController.getUserButton().debounce(0.1).onTrue(new SetDriveMode());
     //fails to build

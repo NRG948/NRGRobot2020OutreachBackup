@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.util.Color8Bit;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants. This class should not be used for any other purpose. All constants should be declared
@@ -30,7 +32,20 @@ public final class Constants {
     //TODO: slewrate need more tuning
     public static final double kDriveSlewRate = 1000; // x percent increase per second, set to arbitrarily high number to disable
   }
-
+  public static class RobotConstants {
+    /**
+     * PMW Ports.
+     */
+    public static class PWMPort{
+      public static final int LED = 0;
+      public static final int LightningLED = 2;
+    }
+   
+    /**
+     * The number of LEDs on the addressable LED string.
+     */
+    public static final int LED_COUNT = 48;
+  }
   public static final class ShooterConstants {
     public static final int kSpinMotor1Port = 4;
     public static final int kSpinMotor2Port = 5;
@@ -48,5 +63,21 @@ public final class Constants {
     public static final int kIntakeMotorPort = 8;
     public static final int kFeederMotorPort = 9;
   }
+
+  public static class ColorConstants {
+      public static final Color8Bit BLACK = new Color8Bit(0,0,0);
+      public static final Color8Bit WHITE = new Color8Bit(200, 200, 200);
+      public static final Color8Bit RED = new Color8Bit(255,0,0);
+      public static final Color8Bit ORANGE = new Color8Bit(255,119,0);
+      public static final Color8Bit YELLOW = new Color8Bit(255,165,0);
+      public static final Color8Bit GREEN = new Color8Bit(0,204,0);
+      public static final Color8Bit BLUE = new Color8Bit(0,0,204);
+      public static final Color8Bit PURPLE = new Color8Bit(238, 80, 255);
+      public static final Color8Bit PINK = new Color8Bit(255,5,100);
+      public static final Color8Bit LIGHTBLUE = new Color8Bit(56,197,252);
+
+      public static final Color8Bit COLORS[] = { BLACK, RED, ORANGE, YELLOW, GREEN, BLUE, LIGHTBLUE, PURPLE, PINK, WHITE};
+
+     }
 }
 
