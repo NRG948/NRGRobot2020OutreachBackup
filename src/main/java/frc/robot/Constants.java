@@ -20,7 +20,7 @@ public final class Constants {
     public static final int kRightDriveMotor1Port = 0;
     public static final int kRightDriveMotor2Port = 1;
 
-    public static final double kSlowModePower = 0.4; //percent
+    public static final double kSlowModePower = 1.0; //percent
     public static final double kFullSpeedRateLimit = 0.01; //Increase (percentage of 1) per 20ms
 
     public static final int isUsingXboxController = 0; //CHANGE THIS TO 1 TO USE XBOX CONTROLLER TO DRIVE
