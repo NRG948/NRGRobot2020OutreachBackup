@@ -14,13 +14,13 @@ public class TankDrive extends SubsystemBase {
   private final SlewRateLimiter leftSlewLimit = new SlewRateLimiter(DriveConstants.kDriveSlewRate);
   private final SlewRateLimiter rightSlewLimit = new SlewRateLimiter(DriveConstants.kDriveSlewRate);
 
-  private MotorController leftMotor1 = new VictorSP(DriveConstants.kLeftDriveMotor1Port);
+ private MotorController leftMotor1 = new VictorSP(DriveConstants.kLeftDriveMotor1Port);
   private MotorController leftMotor2 = new VictorSP(DriveConstants.kLeftDriveMotor2Port);
-  private MotorController rightMotor1 = new VictorSP(DriveConstants.kRightDriveMotor1Port);
+  //private MotorController rightMotor1 = new VictorSP(DriveConstants.kRightDriveMotor1Port);
   private MotorController rightMotor2 = new VictorSP(DriveConstants.kRightDriveMotor2Port);
 
   private MotorControllerGroup leftMotors = new MotorControllerGroup(leftMotor1,leftMotor2);
-  private MotorControllerGroup rightMotors = new MotorControllerGroup(rightMotor1,rightMotor2);
+  private MotorControllerGroup rightMotors = new MotorControllerGroup(rightMotor2);
 
   private final DifferentialDrive diffDrive = new DifferentialDrive(leftMotors, rightMotors);
 

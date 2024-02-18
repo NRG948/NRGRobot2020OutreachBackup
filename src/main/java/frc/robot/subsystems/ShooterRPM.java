@@ -142,12 +142,14 @@ public class ShooterRPM extends SubsystemBase {
     spinMotor1.set(power);
     spinMotor2.set(power);
     lastMotorPower = power;
+    SmartDashboard.putNumber("Shooter Power", power * 100);
   }
 
   /** Sets the flywheel spin motor controllers to the given voltage. */
   public void setFlyWheelVoltage(double power) {
     spinMotor1.setVoltage(power * 12);
     spinMotor2.setVoltage(power * 12);
+    SmartDashboard.putNumber("Shooter Power", power * 100);
     lastMotorPower = power;
   }
 

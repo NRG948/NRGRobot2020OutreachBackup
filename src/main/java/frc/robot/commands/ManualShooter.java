@@ -26,7 +26,6 @@ public class ManualShooter extends CommandBase {
   @Override
   public void execute() {
     shooterRPM.setFlyWheel(-xboxController.getRightTriggerAxis() * ShooterConstants.kShooterMaxPower);
-    //System.out.println("fjdaskfljdsa");
   }
 
   // Called once the command ends or is interrupted.
