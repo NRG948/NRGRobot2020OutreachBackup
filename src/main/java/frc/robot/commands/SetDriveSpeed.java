@@ -18,9 +18,12 @@ public class SetDriveSpeed extends CommandBase {
   }
 
   @Override
+  public void initialize() {
+    m_drive.setMaxOutput(DriveConstants.kActualSlowPower);
+  }
+  @Override
   public void execute() {
-    fullSpeed = fullSpeed + DriveConstants.kFullSpeedRateLimit;
-    m_drive.setMaxOutput(fullSpeed);
+    // fullSpeed = fullSpeed + DriveConstants.kFullSpeedRateLimit;
   }
 
   @Override
