@@ -1,18 +1,20 @@
 package frc.robot.commands;
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Constants.ShooterConstants;
 import frc.robot.subsystems.ShooterRPM;
 
 public class ManualShooter extends CommandBase {
   ShooterRPM shooterRPM;
-  CommandXboxController xboxController;
+  GenericHID joystick;
   /**
    * Creates a new ManualShooter.
    */
-  public ManualShooter(ShooterRPM shooterRPM, CommandXboxController xboxController) {
+  public ManualShooter(ShooterRPM shooterRPM, GenericHID operatorJoystick) {
     this.shooterRPM = shooterRPM;
-    this.xboxController = xboxController;
+    this.joystick = operatorJoystick;
     addRequirements(shooterRPM);
   }
 
@@ -25,7 +27,7 @@ public class ManualShooter extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    shooterRPM.setFlyWheel(-xboxController.getRightTriggerAxis() * ShooterConstants.kShooterMaxPower);
+    shooterRPM.setFlyWheel(-joystick.getPOV() * ShooterConstants.kShooterMaxPower);
   }
 
   // Called once the command ends or is interrupted.

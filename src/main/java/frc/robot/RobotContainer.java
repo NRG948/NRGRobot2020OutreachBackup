@@ -7,13 +7,18 @@ package frc.robot;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.PS4Controller.Button;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 
 public class RobotContainer {
 
   private final CommandJoystick leftJoystick = new CommandJoystick(2);
   private final CommandJoystick rightJoystick = new CommandJoystick(3);
-  private final CommandXboxController operatorController = new CommandXboxController(1);
+  //private final CommandXboxController operatorController = new CommandXboxController(1);
+  private final GenericHID operatorJoystick = new GenericHID(4);
   private final CommandXboxController driveController = new CommandXboxController(0);
 
   //private final RobotController m_robotController;
@@ -27,15 +32,18 @@ public class RobotContainer {
 
   private Subsystems subsystems = new Subsystems();
 
+  JoystickButton button1 = new JoystickButton(operatorJoystick, 1);
+  JoystickButton button2 = new JoystickButton (operatorJoystick, 2);
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
-    intaker.setDefaultCommand(new ControlIntake(intaker, operatorController));
-    feeder.setDefaultCommand(new ControlFeeder(feeder, operatorController));
-    hood.setDefaultCommand(new ControlHood(hood, operatorController));
-    turret.setDefaultCommand(new ControlTurret(turret, operatorController));
-    rpm.setDefaultCommand(new ManualShooter(rpm, operatorController));
+    //intaker.setDefaultCommand(new ControlIntake(intaker, operatorController));
+    feeder.setDefaultCommand(new ControlFeeder(feeder, operatorJoystick));
+    //hood.setDefaultCommand(new ControlHood(hood, operatorController));
+    //turret.setDefaultCommand(new ControlTurret(turret, operatorController));
+    rpm.setDefaultCommand(new ManualShooter(rpm, operatorJoystick));
 
     drivetrain.setDefaultCommand(new DefaultDrive(drivetrain,leftJoystick, rightJoystick,driveController));
   }   
@@ -47,9 +55,9 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    operatorController.leftTrigger().whileTrue(new SetDriveSpeed(drivetrain));
-    operatorController.rightBumper().whileTrue(new RainbowLEDCycle(Subsystems.leds));
-    operatorController.leftBumper().onTrue(new FlashingLEDs(Constants.ColorConstants.RED, Constants.ColorConstants.YELLOW, subsystems.leds, 1));
+    //operatorController.leftTrigger().whileTrue(new SetDriveSpeed(drivetrain));
+    //operatorController.rightBumper().whileTrue(new RainbowLEDCycle(Subsystems.leds));
+    //operatorController.leftBumper().onTrue(new FlashingLEDs(Constants.ColorConstants.RED, Constants.ColorConstants.YELLOW, subsystems.leds, 1));
     
     //m_robotController.getUserButton().debounce(0.1).onTrue(new SetDriveMode());
     //fails to build
