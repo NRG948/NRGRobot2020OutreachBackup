@@ -32,15 +32,19 @@ public class RobotContainer {
 
   private Subsystems subsystems = new Subsystems();
 
-  JoystickButton button1 = new JoystickButton(operatorJoystick, 1);
-  JoystickButton button2 = new JoystickButton (operatorJoystick, 2);
+  JoystickButton button1 = new JoystickButton(operatorJoystick, 1); // intake in
+  JoystickButton button2 = new JoystickButton (operatorJoystick, 2); // intake out
+  JoystickButton button3 = new JoystickButton (operatorJoystick, 3); // unmapped
+  JoystickButton button4 = new JoystickButton (operatorJoystick, 4); // indexer away from shooter
+  JoystickButton button5 = new JoystickButton (operatorJoystick, 5); // indexer towards shooter
+
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
-    //intaker.setDefaultCommand(new ControlIntake(intaker, operatorController));
-    feeder.setDefaultCommand(new ControlFeeder(feeder, operatorJoystick));
+    intaker.setDefaultCommand(new ControlIntake(intaker, button1, button2));
+    feeder.setDefaultCommand(new ControlFeeder(feeder, button4, button5));
     //hood.setDefaultCommand(new ControlHood(hood, operatorController));
     //turret.setDefaultCommand(new ControlTurret(turret, operatorController));
     rpm.setDefaultCommand(new ManualShooter(rpm, operatorJoystick));

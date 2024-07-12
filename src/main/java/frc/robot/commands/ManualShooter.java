@@ -27,7 +27,7 @@ public class ManualShooter extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    shooterRPM.setFlyWheel(-joystick.getPOV() * ShooterConstants.kShooterMaxPower);
+    shooterRPM.setFlyWheel(joystick.getRawAxis(1) * ShooterConstants.kShooterMaxPower);
   }
 
   // Called once the command ends or is interrupted.

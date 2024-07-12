@@ -8,17 +8,25 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 //import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.subsystems.Feeder;
 
 public class ControlFeeder extends CommandBase {
   Feeder feeder;
-  final GenericHID joystick;
+  // final GenericHID joystick;
+  final JoystickButton m_button4;
+  final JoystickButton m_button5;
+
+  final double INDEXER_POWER = 0.5;
+
+  double indexerPower;
 
   /** Creates a new ControlFeeder. */
-  public ControlFeeder(Feeder feeder, final GenericHID operatorJoystick) {
+  public ControlFeeder(Feeder feeder, JoystickButton m_button4, JoystickButton m_button5) {
     this.feeder = feeder;
-    this.joystick = operatorJoystick;
+    this.m_button4 = m_button4;
+    this.m_button5 = m_button5;
     addRequirements(feeder);
   
   }
@@ -30,7 +38,8 @@ public class ControlFeeder extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    feeder.rawFeeder(joystick.getPOV() * 0.5);
+    indexerPower = m_button4.getAsBoolean() ? INDEXER_POWER : (m_button5.getAsBoolean() ? -INDEXER_POWER : 0.0);
+    feeder.rawFeeder(indexerPower);
   }
 
   // Called once the command ends or is interrupted.
