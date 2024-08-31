@@ -7,11 +7,11 @@
 ### OPERATOR CONTROLS (see OperatorControls.png for graphical diagram):
 * Intake is controlled by the right stick on the operator controller. Push up to intake, push down to outtake.
 * Shooter is controlled by operator controller right trigger. Press and hold to spin up, release to allow for spin down. The amount you hold down affects the acceleration and final speed.
- * During spinup, ensure that no balls are touching the shooter wheels. If they are, use the feeder control in reverse.
- * Note that it will take multiple seconds for the shooter to fully spin up. Feeding early will result in lower exit velocity, for better or for worse.
+    * During spinup, ensure that no balls are touching the shooter wheels. If they are, use the feeder control in reverse.
+    * Note that it will take multiple seconds for the shooter to fully spin up. Feeding early will result in lower exit velocity, for better or for worse.
 * Once shooter is up to speed, use the operator controller left stick to control the feeder. Push up to push the ball into the shooter. Push down to push away the ball (for example, to clear the shooter to allow spinup).
 * The Hood and Turret are controlled by the operator controller's DPad. Use the up and down buttons for the hood and the left and right buttons for the turret.
- * Note that there are currently no software limits, so ensure that you are not trying to pass a hard stop.
+    * Note that there are currently no software limits, so ensure that you are not trying to pass a hard stop.
 
 ### OTHER NOTES:
 * The robot's name is Atris. 

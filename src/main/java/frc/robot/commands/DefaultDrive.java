@@ -31,8 +31,12 @@ public class DefaultDrive extends CommandBase {
         m_drive.diffDrive(m_XboxController.getLeftY(),m_XboxController.getRightY());
       } else if (SetDriveMode.DriveControllerMode == 0) {
         m_drive.diffDrive(m_leftJoystick.getY(),m_rightJoystick.getY());
-      } else if (SetDriveMode.DriveControllerMode == 2) {
-        
+      } else if (SetDriveMode.DriveControllerMode == 2) { //should never reach this point FOR NOW
+        if (m_XboxController.getLeftY() == 0 && m_XboxController.getRightY() == 0) {
+          m_drive.diffDrive(m_leftJoystick.getY(),m_rightJoystick.getY());
+        } else {
+          m_drive.diffDrive(m_XboxController.getLeftY(),m_XboxController.getRightY());
+        }
       } else {
         m_drive.diffDrive(0, 0);
         System.out.print("No Drive Controller Mode!");

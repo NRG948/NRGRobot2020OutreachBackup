@@ -7,6 +7,8 @@ package frc.robot;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 
 public class RobotContainer {
@@ -30,6 +32,9 @@ public class RobotContainer {
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
+    SmartDashboard.putBoolean("Slow Mode?", true);
+    SmartDashboard.putNumber("Shooter Power", 0);
+
     configureButtonBindings();
     intaker.setDefaultCommand(new ControlIntake(intaker, operatorController));
     feeder.setDefaultCommand(new ControlFeeder(feeder, operatorController));
@@ -37,7 +42,7 @@ public class RobotContainer {
     turret.setDefaultCommand(new ControlTurret(turret, operatorController));
     rpm.setDefaultCommand(new ManualShooter(rpm, operatorController));
 
-    drivetrain.setDefaultCommand(new DefaultDrive(drivetrain,leftJoystick, rightJoystick,driveController));
+    drivetrain.setDefaultCommand(new DefaultDrive(drivetrain,leftJoystick, rightJoystick, driveController));
   }   
 
   /**

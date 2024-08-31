@@ -10,7 +10,7 @@ import frc.robot.Constants.DriveConstants;
 
 public class SetDriveMode extends CommandBase {
   //public static int DriveControllerMode = 1;
-  public static int DriveControllerMode = DriveConstants.isUsingXboxController; // temporary
+  public static int DriveControllerMode = DriveConstants.isUsingXboxController; // temporary, eventually this should not be a constant and instead settable in SmartDashboard
 
   public SetDriveMode() {
     

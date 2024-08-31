@@ -22,8 +22,7 @@ public final class Constants {
     //public static final int kRightDriveMotor1Port = 0;
     public static final int kRightDriveMotor2Port = 1;
 
-    public static final double kSlowModePower = 1.0; //percent
-    public static final double kActualSlowPower = 0.20; // percent power
+    public static final double kSlowModePower = 0.7; //percent
     public static final double kFullSpeedRateLimit = 0.01; //Increase (percentage of 1) per 20ms
 
     public static final int isUsingXboxController = 0; //CHANGE THIS TO 1 TO USE XBOX CONTROLLER TO DRIVE
@@ -53,8 +52,8 @@ public final class Constants {
     public static final int kHoodMotorPort = 7;
     public static final int kTurretMotorPort = 6;
     public static final int kSpinEncoderPort = 4;
-    public static final int kTurretEncoderAPort = 6; // should be 0
-    public static final int kTurretEncoderBPort = 7; // should be 1
+    public static final int kTurretEncoderAPort = 6;
+    public static final int kTurretEncoderBPort = 7;
     public static final int kHoodAnalogEncoderPort = 0;
 
     public static final double kShooterMaxPower = 1; //percent
