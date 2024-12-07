@@ -10,8 +10,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.RobotConstants;
 import frc.robot.Constants.RobotConstants.PWMPort;
 import frc.robot.utilities.AddressableLEDs;
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj.util.Color8Bit;
 
 public class AddressableLEDSubsystem extends SubsystemBase {
