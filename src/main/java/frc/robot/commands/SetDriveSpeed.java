@@ -7,11 +7,11 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.TankDrive;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Constants.DriveConstants;
 
-public class SetDriveSpeed extends CommandBase {
+public class SetDriveSpeed extends Command {
   private final TankDrive m_drive;
   private static double fullSpeed = DriveConstants.kSlowModePower;
 

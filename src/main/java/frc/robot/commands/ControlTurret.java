@@ -4,11 +4,11 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.subsystems.Turret;
 
-public class ControlTurret extends CommandBase {
+public class ControlTurret extends Command {
   final CommandXboxController xboxController;
   final Turret turret;
   private double power;

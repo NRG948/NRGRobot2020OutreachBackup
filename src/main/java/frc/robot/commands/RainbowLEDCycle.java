@@ -4,13 +4,13 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants;
 import frc.robot.Constants.RobotConstants.PWMPort;
 import frc.robot.subsystems.AddressableLEDSubsystem;
 import frc.robot.utilities.AddressableLEDs;
 
-public class RainbowLEDCycle extends CommandBase {
+public class RainbowLEDCycle extends Command {
   private AddressableLEDSubsystem led = new AddressableLEDSubsystem(PWMPort.LightningLED, 16);
   public static int colorIndex=0;
   /** Creates a new RainbowLEDCycle. */

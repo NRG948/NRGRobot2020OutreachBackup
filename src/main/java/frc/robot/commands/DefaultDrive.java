@@ -1,13 +1,13 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.subsystems.TankDrive;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.commands.SetDriveMode;
 
-public class DefaultDrive extends CommandBase {
+public class DefaultDrive extends Command {
     @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
     private final TankDrive m_drive;
     final CommandXboxController m_XboxController;

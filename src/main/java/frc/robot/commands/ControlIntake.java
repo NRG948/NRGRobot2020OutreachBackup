@@ -5,11 +5,11 @@
 package frc.robot.commands;
 
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.subsystems.Intake;
 
-public class ControlIntake extends CommandBase {
+public class ControlIntake extends Command {
   Intake intaker;
   final CommandXboxController m_xboxController;
   /** Creates a new ControlIntake. */

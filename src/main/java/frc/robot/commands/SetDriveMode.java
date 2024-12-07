@@ -4,11 +4,11 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Constants.DriveConstants;
 
-public class SetDriveMode extends CommandBase {
+public class SetDriveMode extends Command {
   //public static int DriveControllerMode = 1;
   public static int DriveControllerMode = DriveConstants.isUsingXboxController; // temporary, eventually this should not be a constant and instead settable in SmartDashboard
 

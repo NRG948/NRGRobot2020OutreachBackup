@@ -1,10 +1,10 @@
 package frc.robot.commands;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Constants.ShooterConstants;
 import frc.robot.subsystems.ShooterRPM;
 
-public class ManualShooter extends CommandBase {
+public class ManualShooter extends Command {
   ShooterRPM shooterRPM;
   CommandXboxController xboxController;
   /**

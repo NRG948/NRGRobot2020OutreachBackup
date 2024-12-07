@@ -4,11 +4,11 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.subsystems.Feeder;
 
-public class ControlFeeder extends CommandBase {
+public class ControlFeeder extends Command {
   Feeder feeder;
   final CommandXboxController m_XboxController;
 

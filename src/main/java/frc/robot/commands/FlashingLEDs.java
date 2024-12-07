@@ -8,12 +8,12 @@ import edu.wpi.first.wpilibj.AddressableLED;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.util.Color8Bit;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants;
 import frc.robot.Constants.ColorConstants;
 import frc.robot.subsystems.AddressableLEDSubsystem;
 
-public class FlashingLEDs extends CommandBase {
+public class FlashingLEDs extends Command {
   private final Color8Bit color1;
   private final Color8Bit color2;
   private final AddressableLEDSubsystem led;
